@@ -1,0 +1,11 @@
+profile_name:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      role: transformer_dev
+      database: USER$MAHAKWALIA
+      warehouse: compute_wh
+      schema: test
+      threads: 8
+      client_session_keep_alive: False

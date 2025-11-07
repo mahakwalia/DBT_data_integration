@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+      - name: store_data 
+        database: SNOWFLAKE_SAMPLE_DATA
+        schema: TPCDS_SF10TCL
+        description: "Raw data for the Shop application"
+        tables:
+          - name: store
+            description: "Raw stores data"
+          - name: store_sales
+            description: "Raw stores sales data"
+          - name: item
