@@ -1,4 +1,7 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='table',
+    pre_hook= ["{{create_schema('test')}}"]
+) }}
 
 {% set rating_categories = ["ss_net_paid",
                             "ss_net_paid_inc_tax",
