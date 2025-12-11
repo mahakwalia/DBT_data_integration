@@ -1,13 +1,61 @@
 version: 2
 
 sources:
-      - name: store_data 
-        database: SNOWFLAKE_SAMPLE_DATA
-        schema: TPCDS_SF10TCL
-        description: "Raw data for the Shop application"
+      - name: SRVC_WH 
+        database: SRVC_WH
+        schema: EXTNLDATAFILES
+        description: "Raw data for the SRVC_WH"
         tables:
-          - name: store
-            description: "Raw stores data"
-          - name: store_sales
-            description: "Raw stores sales data"
-          - name: item
+          - name: REF_ZIP_TO_FIP
+            description: "Raw data for REF_ZIP_TO_FIP table"
+      
+      - name: PVM 
+        database: PVM
+        schema: DBO
+        description: "Raw data for the PVM application"
+        tables:
+          - name: TBL_PROPERTY
+            description: "Raw data for TBL_PROPERTY table"
+          - name: TBL_VALUATION
+            description: "Raw data for TBL_VALUATION table"
+
+      - name: MASTER 
+        database: MASTER
+        schema: DBO
+        description: "Raw data for the PVM application"
+        tables:      
+          - name: SPT_VALUES
+            description: "Raw data for SPT_VALUES table"
+
+      - name: LSAMS 
+        database: LSAMS
+        schema: ADMIN
+        description: "Raw data for the LSAMS application"
+        tables:
+          - name: SRVDSR
+            description: "Raw data for SRVDSR table"
+          - name: LOAN_MSG_CD
+            description: "Raw data for SRVDSR table"
+          - name: LOAN_NBR_CROSS_REF
+          - name: LSLOAN00
+          - name: BRANDFLP
+            description: "Raw data for BRANDFLP table"
+          - name: SRVMLD
+            description: "Raw data for SRVMLD table"
+          - name: SRVALT2
+            description: "Raw data for SRVALT2 table"
+          - name: SRVMBSP
+            description: "Raw data for SRVMBSP table"
+          - name: SRVMBSP2
+            description: "Raw data for SRVMBSP table"
+          - name: SRVBAL
+            description: "Raw data for SRVDSR table"
+          - name: SRVESCE
+            description: "Raw data for SRVBAL table"
+          - name: LSBORR00
+            description: "Raw data for LSBORROO table"
+          - name: SRVFACT
+            description: "Raw data for SRVFACT table"
+          - name: LSBKCAS00
+            description: "Raw data for LSBKCAS00 table"
+      

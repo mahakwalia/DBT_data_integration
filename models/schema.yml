@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: loan
+    description: "Contains unique customer records."
+    columns:
+      - name: loan_nbr
+        description: "Unique identifier for each customer."
+        tests:
+          - unique
+          - not_null
+      - name: sor_cd
+        description: "Sor code for the sources"
