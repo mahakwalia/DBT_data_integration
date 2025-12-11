@@ -1,4 +1,9 @@
-{{ config(materialized="view", database="SRVC_WH", schema="dbo", transient=false) }}
+{{ config(
+    materialized="view", 
+    database="SRVC_WH", 
+    schema="dbo",
+    transient=false)
+}}
 
 
 with

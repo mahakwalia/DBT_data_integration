@@ -1,4 +1,4 @@
-{{ config(materialized="view", database="SRVC_WH", schema="dbo", transient=false) }}
+{{ config(database="SRVC_WH", schema="dbo", transient=false) }}
 
 with
     cte_lsbkcas00 as (

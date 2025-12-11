@@ -1,7 +1,8 @@
+-- unq_key_txt is a combination of Loan_nbr &
 {% snapshot loan %}
     {{
       config(
-        unique_key='unq_key_txt',
+        unique_key='unq_key_txt', 
         strategy='check',
         check_cols=[
             'escrw_ind',
@@ -41,7 +42,7 @@ with
             mtg_insmt,
             mth_past_due,
             cast(current_timestamp() as timestamp_ntz) as aud_upd_dttm,
-            CASE WHEN dbt_valid_to IS NULL THEN 1 ELSE 0 END  as curr_ind,
+            
             last_due_dt,
             trim(temp_cpy_loan_key.loan_sts_cd) as loan_sts_cd,
             mi_prem_fnce_ind_cd,
@@ -83,6 +84,8 @@ with
                 else null
             end as last_escrow_anls_dt,
             dbt_valid_from  as eff_dttm,
+            dbt_valid_to as end_dttm,
+            CASE WHEN dbt_valid_to IS NULL THEN 'Y' ELSE 'N' END  as curr_ind,
             flood_ins_rqr_flg,
             invstr_loan_nbr,
             reo_ind,
@@ -104,7 +107,7 @@ with
             amz_term,
             arm_ind,
             temp_cpy_loan_key.pymt_appl_pln_nbr as pymt_appl_pln_nbr,
-            dbt_valid_to as end_dttm,
+            
             escrw_orgnl_pymt,
             hghr_prc_mtg_loan_ind,
             lsams_rfd_cd,
